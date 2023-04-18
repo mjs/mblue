@@ -1,4 +1,4 @@
-# Starting point
+# mblue
 
 [![build-ublue](https://github.com/mjs/mblue/actions/workflows/build.yml/badge.svg)](https://github.com/mjs/mblue/actions/workflows/build.yml)
 
