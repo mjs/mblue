@@ -1,5 +1,6 @@
 #!/bin/bash
-# remove the default firefox (from fedora) in favor of the flatpak
+
+echo "-- Removing default firefox --"
 rpm-ostree override remove firefox firefox-langpacks
 
 echo "-- Installing RPMs defined in recipe.yml --"
