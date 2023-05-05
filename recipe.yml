@@ -1,11 +1,9 @@
 # The image will be at ghcr.io/yourusername/name
 name: mblue
+description: Menno's custom Universal Blue
 
 base-container: ghcr.io/ublue-os/silverblue-main
-
-fedora-version: 37
-
-description: Menno's custom ublue
+fedora-version: 38
 
 rpms:
   - python3-pip # needed for yafti (the first boot installer)
