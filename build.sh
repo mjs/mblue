@@ -1,7 +1,14 @@
 #!/bin/bash
 
+set -xe
+
 echo "-- Removing default firefox --"
 rpm-ostree override remove firefox firefox-langpacks
+
+echo "-- Installing Mullvad client --"
+cd /tmp
+curl -sSLO https://github.com/mullvad/mullvadvpn-app/releases/download/2023.3/MullvadVPN-2023.3_x86_64.rpm
+rpm -i ./MullvadVPN-2023.3_x86_64.rpm
 
 echo "-- Installing RPMs defined in recipe.yml --"
 rpm_packages=$(yq '.rpms[]' < /tmp/ublue-recipe.yml)
@@ -10,6 +17,7 @@ for pkg in $(echo -e "$rpm_packages"); do \
     rpm-ostree install $pkg; \
 done
 echo "---"
+
 
 # install yafti to install flatpaks on first boot, https://github.com/ublue-os/yafti
 pip install --prefix=/usr yafti
